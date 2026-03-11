@@ -80,7 +80,7 @@ document.getElementById("questionCount").innerText=
 
 const typing=showTyping()
 
-const res=await fetch("http://localhost:5000/ask",{
+const res=await fetch("https://ai-study-assistant-fx5n.onrender.com/ask",{
 
 method:"POST",
 
@@ -107,7 +107,7 @@ loadHistory()
 
 async function summarizePDF(){
 
-const res=await fetch("http://localhost:5000/summary")
+const res=await fetch("https://ai-study-assistant-fx5n.onrender.com/summary")
 
 const data=await res.json()
 
@@ -117,7 +117,7 @@ addMessage(data.answer,"bot")
 
 async function generateQuiz(){
 
-const res=await fetch("http://localhost:5000/quiz")
+const res=await fetch("https://ai-study-assistant-fx5n.onrender.com/quiz")
 
 const data=await res.json()
 
@@ -133,7 +133,7 @@ const formData=new FormData()
 
 formData.append("pdf",file)
 
-await fetch("http://localhost:5000/upload-pdf",{
+await fetch("https://ai-study-assistant-fx5n.onrender.com/upload-pdf",{
 method:"POST",
 body:formData
 })
@@ -146,7 +146,7 @@ async function newChat(){
 
 currentConversationId=Date.now().toString()
 
-await fetch("http://localhost:5000/reset",{method:"POST"})
+await fetch("https://ai-study-assistant-fx5n.onrender.com/reset",{method:"POST"})
 
 document.getElementById("chat-box").innerHTML=""
 
@@ -171,7 +171,7 @@ event.results[0][0].transcript
 
 async function loadHistory(){
 
-const res=await fetch("http://localhost:5000/history")
+const res=await fetch("https://ai-study-assistant-fx5n.onrender.com/history")
 
 const data=await res.json()
 
@@ -199,7 +199,7 @@ async function openConversation(id){
 
 currentConversationId=id
 
-const res=await fetch("http://localhost:5000/conversation/"+id)
+const res=await fetch("https://ai-study-assistant-fx5n.onrender.com/conversation/"+id)
 
 const data=await res.json()
 
@@ -233,4 +233,5 @@ loadHistory()
 addMessage(
 "Hello 👋 I am your AI Study Assistant.\nUpload PDFs or ask me anything.",
 "bot"
+
 )
