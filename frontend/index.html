@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>AI Study Assistant</title>
+
+<p class="tagline">
+AI-powered study assistant for students.
+Upload notes, ask questions, generate quizzes.
+</p>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="app">
+
+<div class="sidebar">
+
+<h2>🎓 AI Study Assistant</h2>
+
+<button onclick="toggleTheme()">🌙 Toggle Theme</button>
+
+<button onclick="newChat()">+ New Chat</button>
+
+<input type="file" id="pdfFile">
+
+<button onclick="uploadPDF()">Upload PDF</button>
+
+<button onclick="summarizePDF()">📄 Summarize PDF</button>
+
+<button onclick="generateQuiz()">🧠 Generate Quiz</button>
+
+<h3>History</h3>
+
+<ul id="history"></ul>
+
+<p id="questionCount">Questions: 0</p>
+
+</div>
+
+<div class="chat-area">
+
+<div id="chat-box"></div>
+
+<div class="input-area">
+
+<input id="question" placeholder="Ask anything...">
+
+<button onclick="startVoice()">🎤</button>
+
+<button onclick="askAI()">Send</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
